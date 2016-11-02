@@ -1,6 +1,6 @@
 //
-//  Underscore+Times.h
-//  Underscore
+//  RBBUnderscore+Times.h
+//  RBBUnderscore
 //
 //  Created by akitsukada on 2015/03/21.
 //  Copyright (c) 2015年 Robert Böhnke. All rights reserved.
@@ -24,9 +24,9 @@
 //  IN THE SOFTWARE.
 //
 
-#import "Underscore.h"
+#import "RBBUnderscore.h"
 
-@interface Underscore (Times)
+@interface RBBUnderscore (Times)
 
 + (void (^)(NSInteger, UnderscoreIntegerIteratorBlock))times;
 

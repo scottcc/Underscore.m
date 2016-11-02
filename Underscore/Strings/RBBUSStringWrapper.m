@@ -1,6 +1,6 @@
 //
-//  USStringWrapper.m
-//  Underscore
+//  RBBUSStringWrapper.m
+//  RBBUnderscore
 //
 //  Created by Vasco d'Orey on 16/11/13.
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
@@ -24,14 +24,14 @@
 //  IN THE SOFTWARE.
 //
 
-#import "USStringWrapper.h"
+#import "RBBUSStringWrapper.h"
 
-@interface USStringWrapper ()
+@interface RBBUSStringWrapper ()
 -(id) initWithString:(NSString *)string;
 @property (readwrite, retain) NSString *string;
 @end
 
-@implementation USStringWrapper
+@implementation RBBUSStringWrapper
 
 #pragma mark - Class Methods
 
@@ -60,53 +60,53 @@
     return [self.string copy];
 }
 
-#pragma mark - Underscore (Strings) Methods
+#pragma mark - RBBUnderscore (Strings) Methods
 
-- (USStringWrapper *)trim
+- (RBBUSStringWrapper *)trim
 {
     NSString *final = [self.string hasPrefix:@" "] ? [self.string substringFromIndex:1] : self.string;
     final = [final hasSuffix:@" "] ? [final substringToIndex:final.length - 1] : final;
-    return [USStringWrapper wrap:final];
+    return [RBBUSStringWrapper wrap:final];
 }
 
-- (USStringWrapper *)capitalize
+- (RBBUSStringWrapper *)capitalize
 {
     NSString *capitalized = [self.string capitalizedString];
-    return [USStringWrapper wrap:capitalized];
+    return [RBBUSStringWrapper wrap:capitalized];
 }
 
-- (USStringWrapper *)lowercase
+- (RBBUSStringWrapper *)lowercase
 {
-    return [USStringWrapper wrap:self.string.lowercaseString];
+    return [RBBUSStringWrapper wrap:self.string.lowercaseString];
 }
 
-- (USStringWrapper *)uppercase
+- (RBBUSStringWrapper *)uppercase
 {
-    return [USStringWrapper wrap:self.string.uppercaseString];
+    return [RBBUSStringWrapper wrap:self.string.uppercaseString];
 }
 
-- (USStringWrapper *(^)(NSString *))strip
+- (RBBUSStringWrapper *(^)(NSString *))strip
 {
-    return ^USStringWrapper *(NSString *strip) {
-        return [USStringWrapper wrap:strip ? [self.string stringByReplacingOccurrencesOfString:strip withString:@""] : nil];
+    return ^RBBUSStringWrapper *(NSString *strip) {
+        return [RBBUSStringWrapper wrap:strip ? [self.string stringByReplacingOccurrencesOfString:strip withString:@""] : nil];
     };
 }
 
-- (USArrayWrapper *(^)(NSString *))split
+- (RBBUSArrayWrapper *(^)(NSString *))split
 {
-    return ^USArrayWrapper *(NSString *separator) {
-        return [USArrayWrapper wrap:separator ? [self.string componentsSeparatedByString:separator] : nil];
+    return ^RBBUSArrayWrapper *(NSString *separator) {
+        return [RBBUSArrayWrapper wrap:separator ? [self.string componentsSeparatedByString:separator] : nil];
     };
 }
 
 @end
 
-@implementation USArrayWrapper (USStrings)
+@implementation RBBUSArrayWrapper (USStrings)
 
-- (USStringWrapper *(^)(NSString *))join
+- (RBBUSStringWrapper *(^)(NSString *))join
 {
-    return ^USStringWrapper *(NSString *joiner) {
-        return [USStringWrapper wrap:[self.unwrap componentsJoinedByString:joiner]];
+    return ^RBBUSStringWrapper *(NSString *joiner) {
+        return [RBBUSStringWrapper wrap:[self.unwrap componentsJoinedByString:joiner]];
     };
 }
 

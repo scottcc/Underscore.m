@@ -1,6 +1,6 @@
 //
-//  Underscore.m
-//  Underscore
+//  RBBUnderscore.m
+//  RBBUnderscore
 //
 //  Created by Robert Böhnke on 5/14/12.
 //  Copyright (C) 2012 Robert Böhnke
@@ -24,13 +24,13 @@
 //  IN THE SOFTWARE.
 //
 
-#import "Underscore.h"
+#import "RBBUnderscore.h"
 
 #if !__has_feature(objc_arc)
-# error Underscore.m requires Automatic Reference Counting to be enabled
+# error RBBUnderscore.m requires Automatic Reference Counting to be enabled
 #endif
 
-@implementation Underscore
+@implementation RBBUnderscore
 
 + (UnderscoreTestBlock (^)(UnderscoreTestBlock))negate
 {

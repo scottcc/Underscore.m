@@ -1,6 +1,6 @@
 //
-//  USDictionaryWrapper.m
-//  Underscore
+//  RBBUSDictionaryWrapper.m
+//  RBBUnderscore
 //
 //  Created by Robert Böhnke on 5/14/12.
 //  Copyright (C) 2012 Robert Böhnke
@@ -24,11 +24,11 @@
 //  IN THE SOFTWARE.
 //
 
-#import "Underscore.h"
+#import "RBBUnderscore.h"
 
-#import "USDictionaryWrapper.h"
+#import "RBBUSDictionaryWrapper.h"
 
-@interface USDictionaryWrapper ()
+@interface RBBUSDictionaryWrapper ()
 
 - initWithDictionary:(NSDictionary *)dictionary;
 
@@ -36,13 +36,13 @@
 
 @end
 
-@implementation USDictionaryWrapper
+@implementation RBBUSDictionaryWrapper
 
 #pragma mark Class methods
 
-+ (USDictionaryWrapper *)wrap:(NSDictionary *)dictionary
++ (RBBUSDictionaryWrapper *)wrap:(NSDictionary *)dictionary
 {
-    return [[USDictionaryWrapper alloc] initWithDictionary:[dictionary copy]];
+    return [[RBBUSDictionaryWrapper alloc] initWithDictionary:[dictionary copy]];
 }
 
 #pragma mark Lifecycle
@@ -65,21 +65,21 @@
     return [self.dictionary copy];
 }
 
-#pragma mark Underscore methods
+#pragma mark RBBUnderscore methods
 
-- (USArrayWrapper *)keys
+- (RBBUSArrayWrapper *)keys
 {
-    return [USArrayWrapper wrap:self.dictionary.allKeys];
+    return [RBBUSArrayWrapper wrap:self.dictionary.allKeys];
 }
 
-- (USArrayWrapper *)values
+- (RBBUSArrayWrapper *)values
 {
-    return [USArrayWrapper wrap:self.dictionary.allValues];
+    return [RBBUSArrayWrapper wrap:self.dictionary.allValues];
 }
 
-- (USDictionaryWrapper *(^)(UnderscoreDictionaryIteratorBlock))each
+- (RBBUSDictionaryWrapper *(^)(UnderscoreDictionaryIteratorBlock))each
 {
-    return ^USDictionaryWrapper *(UnderscoreDictionaryIteratorBlock block) {
+    return ^RBBUSDictionaryWrapper *(UnderscoreDictionaryIteratorBlock block) {
         [self.dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             block(key, obj);
         }];
@@ -88,9 +88,9 @@
     };
 }
 
-- (USDictionaryWrapper *(^)(UnderscoreDictionaryMapBlock))map
+- (RBBUSDictionaryWrapper *(^)(UnderscoreDictionaryMapBlock))map
 {
-    return ^USDictionaryWrapper *(UnderscoreDictionaryMapBlock block) {
+    return ^RBBUSDictionaryWrapper *(UnderscoreDictionaryMapBlock block) {
         NSMutableDictionary *result = [NSMutableDictionary dictionary];
         [self.dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             id mapped = block(key, obj);
@@ -99,13 +99,13 @@
             }
         }];
 
-        return [[USDictionaryWrapper alloc] initWithDictionary:result];
+        return [[RBBUSDictionaryWrapper alloc] initWithDictionary:result];
     };
 }
 
-- (USDictionaryWrapper *(^)(NSArray *))pick
+- (RBBUSDictionaryWrapper *(^)(NSArray *))pick
 {
-    return ^USDictionaryWrapper *(NSArray *keys) {
+    return ^RBBUSDictionaryWrapper *(NSArray *keys) {
         __block NSMutableDictionary *result = [NSMutableDictionary dictionaryWithCapacity:keys.count];
 
         [self.dictionary enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -114,26 +114,26 @@
             }
         }];
 
-        return [[USDictionaryWrapper alloc] initWithDictionary:result];
+        return [[RBBUSDictionaryWrapper alloc] initWithDictionary:result];
     };
 }
 
-- (USDictionaryWrapper *(^)(NSDictionary *))extend
+- (RBBUSDictionaryWrapper *(^)(NSDictionary *))extend
 {
-    return ^USDictionaryWrapper *(NSDictionary *source) {
+    return ^RBBUSDictionaryWrapper *(NSDictionary *source) {
         __block NSMutableDictionary *result = [self.dictionary mutableCopy];
 
         [source enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
             result[key] = obj;
         }];
 
-        return [[USDictionaryWrapper alloc] initWithDictionary:result];
+        return [[RBBUSDictionaryWrapper alloc] initWithDictionary:result];
     };
 }
 
-- (USDictionaryWrapper *(^)(NSDictionary *))defaults
+- (RBBUSDictionaryWrapper *(^)(NSDictionary *))defaults
 {
-    return ^USDictionaryWrapper *(NSDictionary *source) {
+    return ^RBBUSDictionaryWrapper *(NSDictionary *source) {
         __block NSMutableDictionary *result = [self.dictionary mutableCopy];
 
         [source enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
@@ -142,39 +142,39 @@
             }
         }];
 
-        return [[USDictionaryWrapper alloc] initWithDictionary:result];
+        return [[RBBUSDictionaryWrapper alloc] initWithDictionary:result];
     };
 }
 
-- (USDictionaryWrapper *(^)(UnderscoreTestBlock))filterKeys
+- (RBBUSDictionaryWrapper *(^)(UnderscoreTestBlock))filterKeys
 {
-    return ^USDictionaryWrapper *(UnderscoreTestBlock test) {
+    return ^RBBUSDictionaryWrapper *(UnderscoreTestBlock test) {
         return self.map(^id (id key, id obj) {
             return test(key) ? obj : nil;
         });
     };
 }
 
-- (USDictionaryWrapper *(^)(UnderscoreTestBlock))filterValues
+- (RBBUSDictionaryWrapper *(^)(UnderscoreTestBlock))filterValues
 {
-    return ^USDictionaryWrapper *(UnderscoreTestBlock test) {
+    return ^RBBUSDictionaryWrapper *(UnderscoreTestBlock test) {
         return self.map(^id (id key, id obj) {
             return test(obj) ? obj : nil;
         });
     };
 }
 
-- (USDictionaryWrapper *(^)(UnderscoreTestBlock))rejectKeys
+- (RBBUSDictionaryWrapper *(^)(UnderscoreTestBlock))rejectKeys
 {
-    return ^USDictionaryWrapper *(UnderscoreTestBlock test) {
-        return self.filterKeys(Underscore.negate(test));
+    return ^RBBUSDictionaryWrapper *(UnderscoreTestBlock test) {
+        return self.filterKeys(RBBUnderscore.negate(test));
     };
 }
 
-- (USDictionaryWrapper *(^)(UnderscoreTestBlock))rejectValues
+- (RBBUSDictionaryWrapper *(^)(UnderscoreTestBlock))rejectValues
 {
-    return ^USDictionaryWrapper *(UnderscoreTestBlock test) {
-        return self.filterValues(Underscore.negate(test));
+    return ^RBBUSDictionaryWrapper *(UnderscoreTestBlock test) {
+        return self.filterValues(RBBUnderscore.negate(test));
     };
 }
 

@@ -1,6 +1,6 @@
 //
-//  Underscore+Strings.h
-//  Underscore
+//  RBBUSStringWrapper.h
+//  RBBUnderscore
 //
 //  Created by Vasco d'Orey on 16/11/13.
 //  Copyright (c) 2013 Robert Böhnke. All rights reserved.
@@ -25,25 +25,54 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Underscore.h"
-#import "USStringWrapper.h"
+#import "RBBUnderscore+Functional.h"
+#import "RBBUSArrayWrapper.h"
 
-@interface Underscore (Strings)
+@interface RBBUSStringWrapper : NSObject
 
-+ (USStringWrapper *(^)(NSString *))string;
++(instancetype) wrap:(NSString *)string;
 
-+ (NSString *(^)(NSString *))trim;
+-(id) init __deprecated_msg("You should use RBBUnderscore.string() instead.");
 
-+ (NSString *(^)(NSString *))capitalize;
+@property (readonly) NSString *unwrap;
 
-+ (NSString *(^)(NSString *))lowercase;
+/**
+ *  Removes any leading and trailing whitespace character.
+ */
+@property (readonly) RBBUSStringWrapper *trim;
 
-+ (NSString *(^)(NSString *))uppercase;
+/**
+ *  Capitalizes the first character in every word, all other characters are lowercase'd
+ */
+@property (readonly) RBBUSStringWrapper *capitalize;
 
-+ (NSString *(^)(NSString *, NSString *))strip;
+/**
+ *  Lowercases all characters.
+ */
+@property (readonly) RBBUSStringWrapper *lowercase;
 
-+ (NSArray *(^)(NSString *, NSString *))split;
+/**
+ *  Uppercases all characters.
+ */
+@property (readonly) RBBUSStringWrapper *uppercase;
 
-+ (NSString *(^)(NSArray *, NSString *))join;
+/**
+ *  Removes occurences of the given string.
+ */
+@property (readonly) RBBUSStringWrapper *(^strip)(NSString *strip);
+
+/**
+ *  Splits the string at the given separator. Returns a nil array if the separator is nil.
+ */
+@property (readonly) RBBUSArrayWrapper *(^split)(NSString *separator);
+
+@end
+
+@interface RBBUSArrayWrapper (USStrings)
+
+/**
+ *  Joins the elements in the array.
+ */
+@property (readonly) RBBUSStringWrapper *(^join)(NSString *joiner);
 
 @end

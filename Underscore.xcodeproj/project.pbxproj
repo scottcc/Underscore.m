@@ -7,20 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		437EE97C1AC9423D00BBB61A /* Underscore+Times.h in Headers */ = {isa = PBXBuildFile; fileRef = 437EE9781AC9423D00BBB61A /* Underscore+Times.h */; };
-		437EE97D1AC9423D00BBB61A /* Underscore+Times.m in Sources */ = {isa = PBXBuildFile; fileRef = 437EE9791AC9423D00BBB61A /* Underscore+Times.m */; };
+		437EE97C1AC9423D00BBB61A /* RBBUnderscore+Times.h in Headers */ = {isa = PBXBuildFile; fileRef = 437EE9781AC9423D00BBB61A /* RBBUnderscore+Times.h */; };
+		437EE97D1AC9423D00BBB61A /* RBBUnderscore+Times.m in Sources */ = {isa = PBXBuildFile; fileRef = 437EE9791AC9423D00BBB61A /* RBBUnderscore+Times.m */; };
 		437EE9811AC9427900BBB61A /* UnderscoreTimesSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 437EE9801AC9427900BBB61A /* UnderscoreTimesSpec.m */; };
-		541D18A615616E2400599033 /* Underscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 541D18A515616E2400599033 /* Underscore.m */; };
+		541D18A615616E2400599033 /* RBBUnderscore.m in Sources */ = {isa = PBXBuildFile; fileRef = 541D18A515616E2400599033 /* RBBUnderscore.m */; };
 		541D18AA1561726C00599033 /* HelperTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 541D18A91561726C00599033 /* HelperTest.m */; };
-		54567D99154DDED4000F38AC /* Underscore.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A3DCCD154DD4BF00387DE3 /* Underscore.h */; };
-		547C44DB15B30ADD004698B8 /* Underscore+Functional.h in Headers */ = {isa = PBXBuildFile; fileRef = 547C44D915B30ADC004698B8 /* Underscore+Functional.h */; };
-		547C44DC15B30ADD004698B8 /* Underscore+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 547C44DA15B30ADD004698B8 /* Underscore+Functional.m */; };
-		54903D13155FF779006854CB /* USArrayWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 54903D11155FF779006854CB /* USArrayWrapper.h */; };
-		54903D14155FF779006854CB /* USArrayWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54903D12155FF779006854CB /* USArrayWrapper.m */; };
+		54567D99154DDED4000F38AC /* RBBUnderscore.h in Headers */ = {isa = PBXBuildFile; fileRef = 54A3DCCD154DD4BF00387DE3 /* RBBUnderscore.h */; };
+		547C44DB15B30ADD004698B8 /* RBBUnderscore+Functional.h in Headers */ = {isa = PBXBuildFile; fileRef = 547C44D915B30ADC004698B8 /* RBBUnderscore+Functional.h */; };
+		547C44DC15B30ADD004698B8 /* RBBUnderscore+Functional.m in Sources */ = {isa = PBXBuildFile; fileRef = 547C44DA15B30ADD004698B8 /* RBBUnderscore+Functional.m */; };
+		54903D13155FF779006854CB /* RBBUSArrayWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 54903D11155FF779006854CB /* RBBUSArrayWrapper.h */; };
+		54903D14155FF779006854CB /* RBBUSArrayWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54903D12155FF779006854CB /* RBBUSArrayWrapper.m */; };
 		54903D1B15600A45006854CB /* USArrayTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 54903D1A15600A45006854CB /* USArrayTest.m */; };
-		54996B2315614B220016BE94 /* USDictionaryWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 54996B2115614B220016BE94 /* USDictionaryWrapper.h */; };
-		54996B2415614B220016BE94 /* USDictionaryWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54996B2215614B220016BE94 /* USDictionaryWrapper.m */; };
-		54996B2D15614F900016BE94 /* USConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 54996B2C15614F900016BE94 /* USConstants.h */; };
+		54996B2315614B220016BE94 /* RBBUSDictionaryWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 54996B2115614B220016BE94 /* RBBUSDictionaryWrapper.h */; };
+		54996B2415614B220016BE94 /* RBBUSDictionaryWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 54996B2215614B220016BE94 /* RBBUSDictionaryWrapper.m */; };
+		54996B2D15614F900016BE94 /* RBBUSConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 54996B2C15614F900016BE94 /* RBBUSConstants.h */; };
 		54996B371561576D0016BE94 /* USDictionaryTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 54996B361561576D0016BE94 /* USDictionaryTest.m */; };
 		54A3DCC9154DD4BF00387DE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A3DCC8154DD4BF00387DE3 /* Foundation.framework */; };
 		54A3DCD9154DD4BF00387DE3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A3DCD8154DD4BF00387DE3 /* UIKit.framework */; };
@@ -28,10 +28,10 @@
 		54A3DCDD154DD4BF00387DE3 /* libUnderscore.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 54A3DCC5154DD4BF00387DE3 /* libUnderscore.a */; };
 		54A3DCE3154DD4BF00387DE3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 54A3DCE1154DD4BF00387DE3 /* InfoPlist.strings */; };
 		66E0383C61676615C01B38FF /* libPods-UnderscoreTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8B6349A4572B62F977C6E386 /* libPods-UnderscoreTests.a */; };
-		BCFADFF31837E77000A81EB5 /* Underscore+Strings.h in Headers */ = {isa = PBXBuildFile; fileRef = BCFADFEF1837E77000A81EB5 /* Underscore+Strings.h */; };
-		BCFADFF41837E77000A81EB5 /* Underscore+Strings.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFADFF01837E77000A81EB5 /* Underscore+Strings.m */; };
-		BCFADFF61837E77000A81EB5 /* USStringWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = BCFADFF11837E77000A81EB5 /* USStringWrapper.h */; };
-		BCFADFF71837E77000A81EB5 /* USStringWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFADFF21837E77000A81EB5 /* USStringWrapper.m */; };
+		BCFADFF31837E77000A81EB5 /* RBBUnderscore+Strings.h in Headers */ = {isa = PBXBuildFile; fileRef = BCFADFEF1837E77000A81EB5 /* RBBUnderscore+Strings.h */; };
+		BCFADFF41837E77000A81EB5 /* RBBUnderscore+Strings.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFADFF01837E77000A81EB5 /* RBBUnderscore+Strings.m */; };
+		BCFADFF61837E77000A81EB5 /* RBBUSStringWrapper.h in Headers */ = {isa = PBXBuildFile; fileRef = BCFADFF11837E77000A81EB5 /* RBBUSStringWrapper.h */; };
+		BCFADFF71837E77000A81EB5 /* RBBUSStringWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFADFF21837E77000A81EB5 /* RBBUSStringWrapper.m */; };
 		BCFADFFC1837EBE600A81EB5 /* UnderscoreStringsSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = BCFADFF91837EBA200A81EB5 /* UnderscoreStringsSpec.m */; };
 /* End PBXBuildFile section */
 
@@ -46,27 +46,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		437EE9781AC9423D00BBB61A /* Underscore+Times.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Underscore+Times.h"; path = "Times/Underscore+Times.h"; sourceTree = "<group>"; };
-		437EE9791AC9423D00BBB61A /* Underscore+Times.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Underscore+Times.m"; path = "Times/Underscore+Times.m"; sourceTree = "<group>"; };
+		437EE9781AC9423D00BBB61A /* RBBUnderscore+Times.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RBBUnderscore+Times.h"; path = "Times/RBBUnderscore+Times.h"; sourceTree = "<group>"; };
+		437EE9791AC9423D00BBB61A /* RBBUnderscore+Times.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RBBUnderscore+Times.m"; path = "Times/RBBUnderscore+Times.m"; sourceTree = "<group>"; };
 		437EE9801AC9427900BBB61A /* UnderscoreTimesSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnderscoreTimesSpec.m; path = Times/UnderscoreTimesSpec.m; sourceTree = "<group>"; };
-		541D18A515616E2400599033 /* Underscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Underscore.m; sourceTree = "<group>"; };
+		541D18A515616E2400599033 /* RBBUnderscore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBBUnderscore.m; sourceTree = "<group>"; };
 		541D18A81561726C00599033 /* HelperTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelperTest.h; sourceTree = "<group>"; };
 		541D18A91561726C00599033 /* HelperTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelperTest.m; sourceTree = "<group>"; };
-		547C44D915B30ADC004698B8 /* Underscore+Functional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Underscore+Functional.h"; sourceTree = "<group>"; };
-		547C44DA15B30ADD004698B8 /* Underscore+Functional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Underscore+Functional.m"; sourceTree = "<group>"; };
-		54903D11155FF779006854CB /* USArrayWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USArrayWrapper.h; sourceTree = "<group>"; };
-		54903D12155FF779006854CB /* USArrayWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USArrayWrapper.m; sourceTree = "<group>"; };
+		547C44D915B30ADC004698B8 /* RBBUnderscore+Functional.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "RBBUnderscore+Functional.h"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		547C44DA15B30ADD004698B8 /* RBBUnderscore+Functional.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "RBBUnderscore+Functional.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		54903D11155FF779006854CB /* RBBUSArrayWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBBUSArrayWrapper.h; sourceTree = "<group>"; };
+		54903D12155FF779006854CB /* RBBUSArrayWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBBUSArrayWrapper.m; sourceTree = "<group>"; };
 		54903D1915600A45006854CB /* USArrayTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USArrayTest.h; sourceTree = "<group>"; };
 		54903D1A15600A45006854CB /* USArrayTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USArrayTest.m; sourceTree = "<group>"; };
-		54996B2115614B220016BE94 /* USDictionaryWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USDictionaryWrapper.h; sourceTree = "<group>"; };
-		54996B2215614B220016BE94 /* USDictionaryWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USDictionaryWrapper.m; sourceTree = "<group>"; };
-		54996B2C15614F900016BE94 /* USConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USConstants.h; sourceTree = "<group>"; };
+		54996B2115614B220016BE94 /* RBBUSDictionaryWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBBUSDictionaryWrapper.h; sourceTree = "<group>"; };
+		54996B2215614B220016BE94 /* RBBUSDictionaryWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RBBUSDictionaryWrapper.m; sourceTree = "<group>"; };
+		54996B2C15614F900016BE94 /* RBBUSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RBBUSConstants.h; sourceTree = "<group>"; };
 		54996B351561576D0016BE94 /* USDictionaryTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = USDictionaryTest.h; sourceTree = "<group>"; };
 		54996B361561576D0016BE94 /* USDictionaryTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = USDictionaryTest.m; sourceTree = "<group>"; };
 		54A3DCC5154DD4BF00387DE3 /* libUnderscore.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUnderscore.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		54A3DCC8154DD4BF00387DE3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		54A3DCCC154DD4BF00387DE3 /* Underscore-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Underscore-Prefix.pch"; sourceTree = "<group>"; };
-		54A3DCCD154DD4BF00387DE3 /* Underscore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Underscore.h; sourceTree = "<group>"; };
+		54A3DCCD154DD4BF00387DE3 /* RBBUnderscore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RBBUnderscore.h; sourceTree = "<group>"; };
 		54A3DCD5154DD4BF00387DE3 /* UnderscoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnderscoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		54A3DCD8154DD4BF00387DE3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		54A3DCE0154DD4BF00387DE3 /* UnderscoreTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UnderscoreTests-Info.plist"; sourceTree = "<group>"; };
@@ -75,10 +75,10 @@
 		7AE9E4877F4455A24A6A2C1F /* Pods-UnderscoreTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnderscoreTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UnderscoreTests/Pods-UnderscoreTests.debug.xcconfig"; sourceTree = "<group>"; };
 		817F18D820AA3ECDEE8E33F6 /* Pods-UnderscoreTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UnderscoreTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UnderscoreTests/Pods-UnderscoreTests.release.xcconfig"; sourceTree = "<group>"; };
 		8B6349A4572B62F977C6E386 /* libPods-UnderscoreTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-UnderscoreTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BCFADFEF1837E77000A81EB5 /* Underscore+Strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Underscore+Strings.h"; path = "Strings/Underscore+Strings.h"; sourceTree = "<group>"; };
-		BCFADFF01837E77000A81EB5 /* Underscore+Strings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "Underscore+Strings.m"; path = "Strings/Underscore+Strings.m"; sourceTree = "<group>"; };
-		BCFADFF11837E77000A81EB5 /* USStringWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USStringWrapper.h; path = Strings/USStringWrapper.h; sourceTree = "<group>"; };
-		BCFADFF21837E77000A81EB5 /* USStringWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = USStringWrapper.m; path = Strings/USStringWrapper.m; sourceTree = "<group>"; };
+		BCFADFEF1837E77000A81EB5 /* RBBUnderscore+Strings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "RBBUnderscore+Strings.h"; path = "Strings/RBBUnderscore+Strings.h"; sourceTree = "<group>"; };
+		BCFADFF01837E77000A81EB5 /* RBBUnderscore+Strings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "RBBUnderscore+Strings.m"; path = "Strings/RBBUnderscore+Strings.m"; sourceTree = "<group>"; };
+		BCFADFF11837E77000A81EB5 /* RBBUSStringWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBBUSStringWrapper.h; path = Strings/RBBUSStringWrapper.h; sourceTree = "<group>"; };
+		BCFADFF21837E77000A81EB5 /* RBBUSStringWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBBUSStringWrapper.m; path = Strings/RBBUSStringWrapper.m; sourceTree = "<group>"; };
 		BCFADFF91837EBA200A81EB5 /* UnderscoreStringsSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UnderscoreStringsSpec.m; path = Strings/UnderscoreStringsSpec.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,8 +108,8 @@
 		438870481ABCA40E008AA84C /* Times */ = {
 			isa = PBXGroup;
 			children = (
-				437EE9781AC9423D00BBB61A /* Underscore+Times.h */,
-				437EE9791AC9423D00BBB61A /* Underscore+Times.m */,
+				437EE9781AC9423D00BBB61A /* RBBUnderscore+Times.h */,
+				437EE9791AC9423D00BBB61A /* RBBUnderscore+Times.m */,
 			);
 			name = Times;
 			sourceTree = "<group>";
@@ -166,15 +166,15 @@
 			children = (
 				438870481ABCA40E008AA84C /* Times */,
 				BCFADFE91837D5F700A81EB5 /* Strings */,
-				54A3DCCD154DD4BF00387DE3 /* Underscore.h */,
-				541D18A515616E2400599033 /* Underscore.m */,
-				547C44D915B30ADC004698B8 /* Underscore+Functional.h */,
-				547C44DA15B30ADD004698B8 /* Underscore+Functional.m */,
-				54903D11155FF779006854CB /* USArrayWrapper.h */,
-				54903D12155FF779006854CB /* USArrayWrapper.m */,
-				54996B2115614B220016BE94 /* USDictionaryWrapper.h */,
-				54996B2215614B220016BE94 /* USDictionaryWrapper.m */,
-				54996B2C15614F900016BE94 /* USConstants.h */,
+				54A3DCCD154DD4BF00387DE3 /* RBBUnderscore.h */,
+				541D18A515616E2400599033 /* RBBUnderscore.m */,
+				547C44D915B30ADC004698B8 /* RBBUnderscore+Functional.h */,
+				547C44DA15B30ADD004698B8 /* RBBUnderscore+Functional.m */,
+				54903D11155FF779006854CB /* RBBUSArrayWrapper.h */,
+				54903D12155FF779006854CB /* RBBUSArrayWrapper.m */,
+				54996B2115614B220016BE94 /* RBBUSDictionaryWrapper.h */,
+				54996B2215614B220016BE94 /* RBBUSDictionaryWrapper.m */,
+				54996B2C15614F900016BE94 /* RBBUSConstants.h */,
 				54A3DCCB154DD4BF00387DE3 /* Supporting Files */,
 			);
 			path = Underscore;
@@ -217,10 +217,10 @@
 		BCFADFE91837D5F700A81EB5 /* Strings */ = {
 			isa = PBXGroup;
 			children = (
-				BCFADFEF1837E77000A81EB5 /* Underscore+Strings.h */,
-				BCFADFF01837E77000A81EB5 /* Underscore+Strings.m */,
-				BCFADFF11837E77000A81EB5 /* USStringWrapper.h */,
-				BCFADFF21837E77000A81EB5 /* USStringWrapper.m */,
+				BCFADFEF1837E77000A81EB5 /* RBBUnderscore+Strings.h */,
+				BCFADFF01837E77000A81EB5 /* RBBUnderscore+Strings.m */,
+				BCFADFF11837E77000A81EB5 /* RBBUSStringWrapper.h */,
+				BCFADFF21837E77000A81EB5 /* RBBUSStringWrapper.m */,
 			);
 			name = Strings;
 			sourceTree = "<group>";
@@ -240,14 +240,14 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54567D99154DDED4000F38AC /* Underscore.h in Headers */,
-				437EE97C1AC9423D00BBB61A /* Underscore+Times.h in Headers */,
-				BCFADFF31837E77000A81EB5 /* Underscore+Strings.h in Headers */,
-				54903D13155FF779006854CB /* USArrayWrapper.h in Headers */,
-				54996B2315614B220016BE94 /* USDictionaryWrapper.h in Headers */,
-				54996B2D15614F900016BE94 /* USConstants.h in Headers */,
-				BCFADFF61837E77000A81EB5 /* USStringWrapper.h in Headers */,
-				547C44DB15B30ADD004698B8 /* Underscore+Functional.h in Headers */,
+				54567D99154DDED4000F38AC /* RBBUnderscore.h in Headers */,
+				437EE97C1AC9423D00BBB61A /* RBBUnderscore+Times.h in Headers */,
+				BCFADFF31837E77000A81EB5 /* RBBUnderscore+Strings.h in Headers */,
+				54903D13155FF779006854CB /* RBBUSArrayWrapper.h in Headers */,
+				54996B2315614B220016BE94 /* RBBUSDictionaryWrapper.h in Headers */,
+				54996B2D15614F900016BE94 /* RBBUSConstants.h in Headers */,
+				BCFADFF61837E77000A81EB5 /* RBBUSStringWrapper.h in Headers */,
+				547C44DB15B30ADD004698B8 /* RBBUnderscore+Functional.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -383,13 +383,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54903D14155FF779006854CB /* USArrayWrapper.m in Sources */,
-				54996B2415614B220016BE94 /* USDictionaryWrapper.m in Sources */,
-				437EE97D1AC9423D00BBB61A /* Underscore+Times.m in Sources */,
-				541D18A615616E2400599033 /* Underscore.m in Sources */,
-				BCFADFF71837E77000A81EB5 /* USStringWrapper.m in Sources */,
-				BCFADFF41837E77000A81EB5 /* Underscore+Strings.m in Sources */,
-				547C44DC15B30ADD004698B8 /* Underscore+Functional.m in Sources */,
+				54903D14155FF779006854CB /* RBBUSArrayWrapper.m in Sources */,
+				54996B2415614B220016BE94 /* RBBUSDictionaryWrapper.m in Sources */,
+				437EE97D1AC9423D00BBB61A /* RBBUnderscore+Times.m in Sources */,
+				541D18A615616E2400599033 /* RBBUnderscore.m in Sources */,
+				BCFADFF71837E77000A81EB5 /* RBBUSStringWrapper.m in Sources */,
+				BCFADFF41837E77000A81EB5 /* RBBUnderscore+Strings.m in Sources */,
+				547C44DC15B30ADD004698B8 /* RBBUnderscore+Functional.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

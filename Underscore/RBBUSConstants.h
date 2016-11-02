@@ -1,9 +1,9 @@
 //
-//  Underscore+Times.m
-//  Underscore
+//  USConstants.h
+//  RBBUnderscore
 //
-//  Created by akitsukada on 2015/03/21.
-//  Copyright (c) 2015年 Robert Böhnke. All rights reserved.
+//  Created by Robert Böhnke on 5/14/12.
+//  Copyright (C) 2012 Robert Böhnke
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to
@@ -24,18 +24,20 @@
 //  IN THE SOFTWARE.
 //
 
-#import "Underscore+Times.h"
+#import <Foundation/Foundation.h>
 
-@implementation Underscore (Times)
+typedef BOOL (^UnderscoreTestBlock)(id obj);
+typedef id   (^UnderscoreReduceBlock)(id memo, id obj);
 
-+ (void (^)(NSInteger, UnderscoreIntegerIteratorBlock))times
-{
-    return ^(NSInteger times, UnderscoreIntegerIteratorBlock block) {
-        NSCParameterAssert(times > 0);
-        for (NSInteger count = 0; count < times; count++) {
-            block(count);
-        }
-    };
-}
+typedef void (^UnderscoreArrayIteratorBlock)(id obj);
+typedef id   (^UnderscoreArrayMapBlock)(id obj);
+typedef id   (^UnderscoreIndexedArrayMapBlock)(id obj, NSUInteger idx);
+typedef id   (^UnderscoreArrayZipWithBlock)(id objectFromFirstArray, id objectFromSecondArray);
+typedef void (^UnderscoreIntegerIteratorBlock)(NSInteger n);
 
-@end
+typedef void (^UnderscoreDictionaryIteratorBlock)(id key, id obj);
+typedef id   (^UnderscoreDictionaryMapBlock)(id key, id obj);
+
+typedef NSComparisonResult (^UnderscoreSortBlock)(id a, id b);
+
+typedef id<NSCopying> (^UnderscoreGroupingBlock)(id obj);

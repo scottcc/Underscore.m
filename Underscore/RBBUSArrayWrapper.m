@@ -1,6 +1,6 @@
 //
-//  USArrayWrapper.m
-//  Underscore
+//  RBBUSArrayWrapper.m
+//  RBBUnderscore
 //
 //  Created by Robert Böhnke on 5/13/12.
 //  Copyright (C) 2012 Robert Böhnke
@@ -24,12 +24,12 @@
 //  IN THE SOFTWARE.
 //
 
-#import "Underscore.h"
+#import "RBBUnderscore.h"
 
-#import "USArrayWrapper.h"
-#import "USDictionaryWrapper.h"
+#import "RBBUSArrayWrapper.h"
+#import "RBBUSDictionaryWrapper.h"
 
-@interface USArrayWrapper ()
+@interface RBBUSArrayWrapper ()
 
 - initWithArray:(NSArray *)array;
 
@@ -37,13 +37,13 @@
 
 @end
 
-@implementation USArrayWrapper
+@implementation RBBUSArrayWrapper
 
 #pragma mark Class methods
 
-+ (USArrayWrapper *)wrap:(NSArray *)array
++ (RBBUSArrayWrapper *)wrap:(NSArray *)array
 {
-    return [[USArrayWrapper alloc] initWithArray:[array copy]];
+    return [[RBBUSArrayWrapper alloc] initWithArray:[array copy]];
 }
 
 #pragma mark Lifecycle
@@ -68,7 +68,7 @@
     return [self.array copy];
 }
 
-#pragma mark Underscore methods
+#pragma mark RBBUnderscore methods
 
 - (id)first
 {
@@ -80,20 +80,20 @@
     return self.array.lastObject;
 }
 
-- (USArrayWrapper *(^)(NSUInteger))head
+- (RBBUSArrayWrapper *(^)(NSUInteger))head
 {
-    return ^USArrayWrapper *(NSUInteger count) {
+    return ^RBBUSArrayWrapper *(NSUInteger count) {
         NSRange    range     = NSMakeRange(0, MIN(self.array.count, count));
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
         NSArray    *result   = [self.array objectsAtIndexes:indexSet];
 
-        return [[USArrayWrapper alloc] initWithArray:result];
+        return [[RBBUSArrayWrapper alloc] initWithArray:result];
     };
 }
 
-- (USArrayWrapper *(^)(NSUInteger))tail
+- (RBBUSArrayWrapper *(^)(NSUInteger))tail
 {
-    return ^USArrayWrapper *(NSUInteger count) {
+    return ^RBBUSArrayWrapper *(NSUInteger count) {
         NSRange range;
         if (count > self.array.count) {
             range = NSMakeRange(0, self.array.count);
@@ -104,18 +104,18 @@
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
         NSArray    *result   = [self.array objectsAtIndexes:indexSet];
 
-        return [[USArrayWrapper alloc] initWithArray:result];
+        return [[RBBUSArrayWrapper alloc] initWithArray:result];
     };
 }
 
-- (USArrayWrapper *(^)(NSUInteger))drop
+- (RBBUSArrayWrapper *(^)(NSUInteger))drop
 {
-    return ^USArrayWrapper *(NSUInteger count) {
+    return ^RBBUSArrayWrapper *(NSUInteger count) {
         NSUInteger start     = MIN(count, self.array.count);
         NSRange    range     = NSMakeRange(start, self.array.count - start);
         NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:range];
         NSArray *result      = [self.array objectsAtIndexes:indexSet];
-        return [[USArrayWrapper alloc] initWithArray:result];
+        return [[RBBUSArrayWrapper alloc] initWithArray:result];
     };
 }
 
@@ -126,7 +126,7 @@
     };
 }
 
-- (USArrayWrapper *)flatten
+- (RBBUSArrayWrapper *)flatten
 {
     __weak NSArray *array = self.array;
     __block NSArray *(^flatten)(NSArray *) = ^NSArray *(NSArray *input) {
@@ -152,19 +152,19 @@
         return result;
     };
 
-    return [USArrayWrapper wrap:flatten(self.array)];
+    return [RBBUSArrayWrapper wrap:flatten(self.array)];
 }
 
-- (USArrayWrapper *(^)(NSArray *))without
+- (RBBUSArrayWrapper *(^)(NSArray *))without
 {
-    return ^USArrayWrapper *(NSArray *value) {
+    return ^RBBUSArrayWrapper *(NSArray *value) {
         return self.reject(^(id obj){
             return [value containsObject:obj];
         });
     };
 }
 
-- (USArrayWrapper *)shuffle
+- (RBBUSArrayWrapper *)shuffle
 {
     NSMutableArray *result = [self.array mutableCopy];
 
@@ -174,12 +174,12 @@
         [result exchangeObjectAtIndex:arc4random_uniform(max) withObjectAtIndex:i];
     }
 
-    return [[USArrayWrapper alloc] initWithArray:result];
+    return [[RBBUSArrayWrapper alloc] initWithArray:result];
 }
 
 - (id (^)(id, UnderscoreReduceBlock))reduce
 {
-    return ^USArrayWrapper *(id memo, UnderscoreReduceBlock function) {
+    return ^RBBUSArrayWrapper *(id memo, UnderscoreReduceBlock function) {
         for (id obj in self.array) {
             memo = function(memo, obj);
         }
@@ -190,7 +190,7 @@
 
 - (id (^)(id, UnderscoreReduceBlock))reduceRight
 {
-    return ^USArrayWrapper *(id memo, UnderscoreReduceBlock function) {
+    return ^RBBUSArrayWrapper *(id memo, UnderscoreReduceBlock function) {
         for (id obj in self.array.reverseObjectEnumerator) {
             memo = function(memo, obj);
         }
@@ -199,9 +199,9 @@
     };
 }
 
-- (USArrayWrapper *(^)(UnderscoreArrayIteratorBlock))each
+- (RBBUSArrayWrapper *(^)(UnderscoreArrayIteratorBlock))each
 {
-    return ^USArrayWrapper *(UnderscoreArrayIteratorBlock block) {
+    return ^RBBUSArrayWrapper *(UnderscoreArrayIteratorBlock block) {
         for (id obj in self.array) {
             block(obj);
         }
@@ -210,9 +210,9 @@
     };
 }
 
-- (USArrayWrapper *(^)(UnderscoreArrayMapBlock))map
+- (RBBUSArrayWrapper *(^)(UnderscoreArrayMapBlock))map
 {
-    return ^USArrayWrapper *(UnderscoreArrayMapBlock block) {
+    return ^RBBUSArrayWrapper *(UnderscoreArrayMapBlock block) {
         NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.array.count];
 
         for (id obj in self.array) {
@@ -223,13 +223,13 @@
             }
         }
 
-        return [[USArrayWrapper alloc] initWithArray:result];
+        return [[RBBUSArrayWrapper alloc] initWithArray:result];
     };
 }
 
-- (USArrayWrapper *(^)(UnderscoreIndexedArrayMapBlock))indexedMap
+- (RBBUSArrayWrapper *(^)(UnderscoreIndexedArrayMapBlock))indexedMap
 {
-    return ^USArrayWrapper *(UnderscoreIndexedArrayMapBlock block) {
+    return ^RBBUSArrayWrapper *(UnderscoreIndexedArrayMapBlock block) {
         NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.array.count];
 
         [self.array enumerateObjectsUsingBlock:^(id _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -240,13 +240,13 @@
             }
         }];
 
-        return [[USArrayWrapper alloc] initWithArray:result];
+        return [[RBBUSArrayWrapper alloc] initWithArray:result];
     };
 }
 
-- (USArrayWrapper *(^)(NSArray *array, UnderscoreArrayZipWithBlock block))zipWith
+- (RBBUSArrayWrapper *(^)(NSArray *array, UnderscoreArrayZipWithBlock block))zipWith
 {
-    return ^USArrayWrapper *(NSArray *array, UnderscoreArrayZipWithBlock block) {
+    return ^RBBUSArrayWrapper *(NSArray *array, UnderscoreArrayZipWithBlock block) {
         NSMutableArray *result = [NSMutableArray arrayWithCapacity:self.array.count];
         if(self.array.count <= array.count) {
             [self.array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
@@ -257,24 +257,24 @@
                 [result addObject:block(self.array[idx], obj)]; 
             }];
         }
-        return [[USArrayWrapper alloc] initWithArray:result];
+        return [[RBBUSArrayWrapper alloc] initWithArray:result];
     };
 }
 
-- (USArrayWrapper *(^)(NSString *))pluck
+- (RBBUSArrayWrapper *(^)(NSString *))pluck
 {
-    return ^USArrayWrapper *(NSString *keyPath) {
+    return ^RBBUSArrayWrapper *(NSString *keyPath) {
         return self.map(^id (id obj) {
             return [obj valueForKeyPath:keyPath];
         });
     };
 }
 
-- (USArrayWrapper *)uniq
+- (RBBUSArrayWrapper *)uniq
 {
     NSOrderedSet *set = [NSOrderedSet orderedSetWithArray:self.array];
 
-    return [[USArrayWrapper alloc] initWithArray:[set array]];
+    return [[RBBUSArrayWrapper alloc] initWithArray:[set array]];
 }
 
 - (id (^)(UnderscoreTestBlock))find
@@ -290,19 +290,19 @@
     };
 }
 
-- (USArrayWrapper *(^)(UnderscoreTestBlock))filter
+- (RBBUSArrayWrapper *(^)(UnderscoreTestBlock))filter
 {
-    return ^USArrayWrapper *(UnderscoreTestBlock test) {
+    return ^RBBUSArrayWrapper *(UnderscoreTestBlock test) {
         return self.map(^id (id obj) {
             return test(obj) ? obj : nil;
         });
     };
 }
 
-- (USArrayWrapper *(^)(UnderscoreTestBlock))reject
+- (RBBUSArrayWrapper *(^)(UnderscoreTestBlock))reject
 {
-    return ^USArrayWrapper *(UnderscoreTestBlock test) {
-        return self.filter(Underscore.negate(test));
+    return ^RBBUSArrayWrapper *(UnderscoreTestBlock test) {
+        return self.filter(RBBUnderscore.negate(test));
     };
 }
 
@@ -340,17 +340,17 @@
     };
 }
 
-- (USArrayWrapper *(^)(UnderscoreSortBlock))sort
+- (RBBUSArrayWrapper *(^)(UnderscoreSortBlock))sort
 {
-    return ^USArrayWrapper *(UnderscoreSortBlock block) {
+    return ^RBBUSArrayWrapper *(UnderscoreSortBlock block) {
         NSArray *result = [self.array sortedArrayUsingComparator:block];
-        return [[USArrayWrapper alloc] initWithArray:result];
+        return [[RBBUSArrayWrapper alloc] initWithArray:result];
     };
 }
 
-- (USDictionaryWrapper *(^)(UnderscoreGroupingBlock))groupBy
+- (RBBUSDictionaryWrapper *(^)(UnderscoreGroupingBlock))groupBy
 {
-    return ^USDictionaryWrapper *(UnderscoreGroupingBlock block) {
+    return ^RBBUSDictionaryWrapper *(UnderscoreGroupingBlock block) {
         NSMutableDictionary *result = [NSMutableDictionary dictionary];
         
         for(id obj in self.array) {
@@ -360,7 +360,7 @@
             result[groupIdentifier] = groupContents;
         }
         
-        return [USDictionaryWrapper wrap:result];
+        return [RBBUSDictionaryWrapper wrap:result];
     };
 }
 

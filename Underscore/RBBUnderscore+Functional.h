@@ -1,6 +1,6 @@
 //
-//  Underscore+Functional.h
-//  Underscore
+//  RBBUnderscore+Functional.h
+//  RBBUnderscore
 //
 //  Created by Robert Böhnke on 7/15/12.
 //  Copyright (c) 2012 Robert Böhnke. All rights reserved.
@@ -24,13 +24,13 @@
 //  IN THE SOFTWARE.
 //
 
-#import "Underscore.h"
+#import "RBBUnderscore.h"
 
-@interface Underscore (FunctionalStyle)
+@interface RBBUnderscore (FunctionalStyle)
 
 #pragma mark NSArray functional style methods
 
-+ (USArrayWrapper *(^)(NSArray *))array;
++ (RBBUSArrayWrapper *(^)(NSArray *))array;
 
 + (id (^)(NSArray *))first;
 + (id (^)(NSArray *))last;
@@ -69,7 +69,7 @@
 
 #pragma mark NSDictionary style methods
 
-+ (USDictionaryWrapper *(^)(NSDictionary *dictionary))dict;
++ (RBBUSDictionaryWrapper *(^)(NSDictionary *dictionary))dict;
 
 + (NSArray *(^)(NSDictionary *dictionary))keys;
 + (NSArray *(^)(NSDictionary *dictionary))values;

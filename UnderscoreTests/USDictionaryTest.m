@@ -1,14 +1,14 @@
 //
 //  USDictionaryTest.m
-//  Underscore
+//  RBBUnderscore
 //
 //  Created by Robert Böhnke on 5/14/12.
 //  Copyright (c) 2012 Robert Böhnke. All rights reserved.
 //
 
-#import "USDictionaryTest.h"
+#import "RBBUSDictionaryTest.h"
 
-#import "Underscore.h"
+#import "RBBUnderscore.h"
 
 static NSArray *emptyArray;
 static NSArray *singleObject;
@@ -20,7 +20,7 @@ static NSDictionary *simpleDictionary;
 static UnderscoreTestBlock allPass  = ^BOOL(id any) {return YES; };
 static UnderscoreTestBlock nonePass = ^BOOL(id any) {return NO; };
 
-#define _ Underscore
+#define _ RBBUnderscore
 
 #define USAssertEqualObjects(functional, wrapper) \
         XCTAssertEqualObjects(functional, wrapper, @"Wrapper and Shortcut behave equally");

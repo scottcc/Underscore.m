@@ -1,8 +1,8 @@
 //
-//  USDictionaryWrapper.h
-//  Underscore
+//  RBBUnderscore.h
+//  RBBUnderscore
 //
-//  Created by Robert Böhnke on 5/14/12.
+//  Created by Robert Böhnke on 4/29/12.
 //  Copyright (C) 2012 Robert Böhnke
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,31 +26,27 @@
 
 #import <Foundation/Foundation.h>
 
-#import "USArrayWrapper.h"
-#import "USConstants.h"
+#import "RBBUSConstants.h"
+#import "RBBUSArrayWrapper.h"
+#import "RBBUSDictionaryWrapper.h"
 
-@interface USDictionaryWrapper : NSObject
+@interface RBBUnderscore : NSObject
 
-+ (USDictionaryWrapper *)wrap:(NSDictionary *)dictionary;
-- (NSDictionary *)unwrap;
++ (UnderscoreTestBlock(^)(UnderscoreTestBlock))negate;
++ (UnderscoreTestBlock(^)(id obj))isEqual;
 
-- (id)init __attribute__((deprecated("You should Underscore.dict() instead")));
++ (UnderscoreTestBlock)isArray;
++ (UnderscoreTestBlock)isBool;
++ (UnderscoreTestBlock)isDictionary;
++ (UnderscoreTestBlock)isNull;
++ (UnderscoreTestBlock)isNumber;
++ (UnderscoreTestBlock)isString;
++ (UnderscoreTestBlock)isEmpty;
 
-@property (readonly) USArrayWrapper *keys;
-@property (readonly) USArrayWrapper *values;
++ (UnderscoreSortBlock)compare;
 
-@property (readonly) USDictionaryWrapper *(^each)(UnderscoreDictionaryIteratorBlock block);
-@property (readonly) USDictionaryWrapper *(^map)(UnderscoreDictionaryMapBlock block);
-
-@property (readonly) USDictionaryWrapper *(^pick)(NSArray *keys);
-
-@property (readonly) USDictionaryWrapper *(^extend)(NSDictionary *source);
-@property (readonly) USDictionaryWrapper *(^defaults)(NSDictionary *defaults);
-
-@property (readonly) USDictionaryWrapper *(^filterKeys)(UnderscoreTestBlock block);
-@property (readonly) USDictionaryWrapper *(^filterValues)(UnderscoreTestBlock block);
-
-@property (readonly) USDictionaryWrapper *(^rejectKeys)(UnderscoreTestBlock block);
-@property (readonly) USDictionaryWrapper *(^rejectValues)(UnderscoreTestBlock block);
+- (id)init __deprecated;
 
 @end
+
+#import "RBBUnderscore+Functional.h"

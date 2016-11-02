@@ -1,6 +1,6 @@
 //
-//  USArrayWrapper.h
-//  Underscore
+//  RBBUSArrayWrapper.h
+//  RBBUnderscore
 //
 //  Created by Robert Böhnke on 5/13/12.
 //  Copyright (C) 2012 Robert Böhnke
@@ -26,50 +26,50 @@
 
 #import <Foundation/Foundation.h>
 
-#import "USConstants.h"
+#import "RBBUSConstants.h"
 
-@class USDictionaryWrapper;
+@class RBBUSDictionaryWrapper;
 
-@interface USArrayWrapper : NSObject
+@interface RBBUSArrayWrapper : NSObject
 
-+ (USArrayWrapper *)wrap:(NSArray *)array;
++ (RBBUSArrayWrapper *)wrap:(NSArray *)array;
 
-- (id)init __attribute__((deprecated("You should Underscore.array() instead")));
+- (id)init __attribute__((deprecated("You should RBBUnderscore.array() instead")));
 
 @property (readonly) NSArray *unwrap;
 
 @property (readonly) id first;
 @property (readonly) id last;
 
-@property (readonly) USArrayWrapper *(^head)(NSUInteger n);
-@property (readonly) USArrayWrapper *(^tail)(NSUInteger n);
-@property (readonly) USArrayWrapper *(^drop)(NSUInteger n);
+@property (readonly) RBBUSArrayWrapper *(^head)(NSUInteger n);
+@property (readonly) RBBUSArrayWrapper *(^tail)(NSUInteger n);
+@property (readonly) RBBUSArrayWrapper *(^drop)(NSUInteger n);
 
 @property (readonly) NSUInteger (^indexOf)(id obj);
 
-@property (readonly) USArrayWrapper *flatten;
-@property (readonly) USArrayWrapper *(^without)(NSArray *values);
-@property (readonly) USArrayWrapper *shuffle;
+@property (readonly) RBBUSArrayWrapper *flatten;
+@property (readonly) RBBUSArrayWrapper *(^without)(NSArray *values);
+@property (readonly) RBBUSArrayWrapper *shuffle;
 
 @property (readonly) id (^reduce)(id memo, UnderscoreReduceBlock block);
 @property (readonly) id (^reduceRight)(id memo, UnderscoreReduceBlock block);
 
-@property (readonly) USArrayWrapper *(^each)(UnderscoreArrayIteratorBlock block);
-@property (readonly) USArrayWrapper *(^map)(UnderscoreArrayMapBlock block);
-@property (readonly) USArrayWrapper *(^indexedMap)(UnderscoreIndexedArrayMapBlock block);
-@property (readonly) USArrayWrapper *(^zipWith)(NSArray *array, UnderscoreArrayZipWithBlock block);
-@property (readonly) USArrayWrapper *(^pluck)(NSString *keyPath);
-@property (readonly) USArrayWrapper *uniq;
+@property (readonly) RBBUSArrayWrapper *(^each)(UnderscoreArrayIteratorBlock block);
+@property (readonly) RBBUSArrayWrapper *(^map)(UnderscoreArrayMapBlock block);
+@property (readonly) RBBUSArrayWrapper *(^indexedMap)(UnderscoreIndexedArrayMapBlock block);
+@property (readonly) RBBUSArrayWrapper *(^zipWith)(NSArray *array, UnderscoreArrayZipWithBlock block);
+@property (readonly) RBBUSArrayWrapper *(^pluck)(NSString *keyPath);
+@property (readonly) RBBUSArrayWrapper *uniq;
 
 @property (readonly) id (^find)(UnderscoreTestBlock block);
 
-@property (readonly) USArrayWrapper *(^filter)(UnderscoreTestBlock block);
-@property (readonly) USArrayWrapper *(^reject)(UnderscoreTestBlock block);
+@property (readonly) RBBUSArrayWrapper *(^filter)(UnderscoreTestBlock block);
+@property (readonly) RBBUSArrayWrapper *(^reject)(UnderscoreTestBlock block);
 
 @property (readonly) BOOL (^all)(UnderscoreTestBlock block);
 @property (readonly) BOOL (^any)(UnderscoreTestBlock block);
 
-@property (readonly) USArrayWrapper *(^sort)(UnderscoreSortBlock block);
-@property (readonly) USDictionaryWrapper *(^groupBy)(UnderscoreGroupingBlock block);
+@property (readonly) RBBUSArrayWrapper *(^sort)(UnderscoreSortBlock block);
+@property (readonly) RBBUSDictionaryWrapper *(^groupBy)(UnderscoreGroupingBlock block);
 
 @end

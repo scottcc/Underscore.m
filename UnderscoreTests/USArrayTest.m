@@ -1,14 +1,14 @@
 //
 //  USArrayTest.m
-//  Underscore
+//  RBBUnderscore
 //
 //  Created by Robert Böhnke on 5/13/12.
 //  Copyright (c) 2012 Robert Böhnke. All rights reserved.
 //
 
-#import "USArrayTest.h"
+#import "RBBUSArrayTest.h"
 
-#import "Underscore.h"
+#import "RBBUnderscore.h"
 
 static NSArray *emptyArray;
 static NSArray *singleObject;
@@ -17,7 +17,7 @@ static NSArray *threeObjects;
 static UnderscoreTestBlock allPass  = ^BOOL(id any) {return YES; };
 static UnderscoreTestBlock nonePass = ^BOOL(id any) {return NO; };
 
-#define _ Underscore
+#define _ RBBUnderscore
 
 #define USAssertEqualObjects(functional, wrapper) \
         XCTAssertEqualObjects (functional, wrapper, @"Wrapper and Shortcut behave equally");

@@ -1,12 +1,12 @@
 //
 //  UnderscoreTimesSpec.m
-//  Underscore
+//  RBBUnderscore
 //
 //  Created by akitsukada on 2015/03/21.
 //  Copyright (c) 2015年 Robert Böhnke. All rights reserved.
 //
 
-#import "Underscore+Times.h"
+#import "RBBUnderscore+Times.h"
 
 SpecBegin(UnderscoreTimes)
 
@@ -15,7 +15,7 @@ describe(@"times", ^{
         it(@"should call given block specified times", ^{
             NSInteger __block count = 0;
             NSInteger times = 10;
-            Underscore.times(times, ^(NSInteger n){
+            RBBUnderscore.times(times, ^(NSInteger n){
                 count++;
             });
             expect(count).to.equal(times);
@@ -26,7 +26,7 @@ describe(@"times", ^{
         it(@"should through Exeption", ^{
             expect(^{
                 NSInteger times = -1;
-                Underscore.times(times, ^(NSInteger n){});
+                RBBUnderscore.times(times, ^(NSInteger n){});
             }).to.raise(@"NSInternalInconsistencyException");
         });
     });
