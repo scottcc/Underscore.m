@@ -41,7 +41,7 @@
 
 + (NSUInteger (^)(NSArray *array, id obj))indexOf;
 
-+ (NSArray *(^)(NSArray *array))flatten;
++ (NSArray *(^)(NSArray *array))_flatten;
 + (NSArray *(^)(NSArray *array, NSArray *values))without;
 + (NSArray *(^)(NSArray *array))shuffle;
 

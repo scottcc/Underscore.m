@@ -80,10 +80,10 @@
     };
 }
 
-+ (NSArray *(^)(NSArray *))flatten
++ (NSArray *(^)(NSArray *))_flatten
 {
     return ^(NSArray *array) {
-        return RBBUnderscore.array(array).flatten.unwrap;
+        return RBBUnderscore.array(array)._flatten.unwrap;
     };
 }
 

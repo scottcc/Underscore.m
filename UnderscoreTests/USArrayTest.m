@@ -146,26 +146,26 @@ static UnderscoreTestBlock nonePass = ^BOOL(id any) {return NO; };
 
 - (void)testFlatten
 {
-    XCTAssertEqualObjects(_.flatten(emptyArray),
+    XCTAssertEqualObjects(_._flatten(emptyArray),
                          emptyArray,
                          @"Returns an empty array for an empty array");
 
-    XCTAssertEqualObjects(_.flatten(threeObjects),
+    XCTAssertEqualObjects(_._flatten(threeObjects),
                          threeObjects,
                          @"Returns a copy for arrays not containing other arrays");
 
     NSArray *complicated = [NSArray arrayWithObjects:@"foo", threeObjects, nil];
     NSArray *flattened   = [NSArray arrayWithObjects:@"foo", @"foo", @"bar", @"baz", nil];
-    XCTAssertEqualObjects(_.flatten(complicated),
+    XCTAssertEqualObjects(_._flatten(complicated),
                          flattened,
                          @"Returns a flattened array when needed");
 
-    USAssertEqualObjects(_.flatten(emptyArray),
-                         _.array(emptyArray).flatten.unwrap);
-    USAssertEqualObjects(_.flatten(threeObjects),
-                         _.array(threeObjects).flatten.unwrap);
-    USAssertEqualObjects(_.flatten(complicated),
-                         _.array(complicated).flatten.unwrap);
+    USAssertEqualObjects(_._flatten(emptyArray),
+                         _.array(emptyArray)._flatten.unwrap);
+    USAssertEqualObjects(_._flatten(threeObjects),
+                         _.array(threeObjects)._flatten.unwrap);
+    USAssertEqualObjects(_._flatten(complicated),
+                         _.array(complicated)._flatten.unwrap);
 }
 
 - (void)testWithout

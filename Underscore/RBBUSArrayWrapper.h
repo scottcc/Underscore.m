@@ -47,7 +47,7 @@
 
 @property (readonly) NSUInteger (^indexOf)(id obj);
 
-@property (readonly) RBBUSArrayWrapper *flatten;
+@property (readonly) RBBUSArrayWrapper *_flatten;
 @property (readonly) RBBUSArrayWrapper *(^without)(NSArray *values);
 @property (readonly) RBBUSArrayWrapper *shuffle;
 

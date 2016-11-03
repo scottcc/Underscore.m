@@ -126,33 +126,33 @@
     };
 }
 
-- (RBBUSArrayWrapper *)flatten
+- (RBBUSArrayWrapper *)_flatten
 {
     __weak NSArray *array = self.array;
-    __block NSArray *(^flatten)(NSArray *) = ^NSArray *(NSArray *input) {
+    __block NSArray *(^_flatten)(NSArray *) = ^NSArray *(NSArray *input) {
         NSMutableArray *result = [NSMutableArray array];
 
         for (id obj in input) {
             if ([obj isKindOfClass:[NSArray class]]) {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Warc-retain-cycles"
-                [result addObjectsFromArray:flatten(obj)];
+                [result addObjectsFromArray:_flatten(obj)];
 #pragma clang diagnostic pop
             } else {
                 [result addObject:obj];
             }
         }
 
-        // If the outmost call terminates, nil the reference to flatten to break
+        // If the outmost call terminates, nil the reference to _flatten to break
         // the retain cycle
         if (input == array) {
-            flatten = nil;
+            _flatten = nil;
         }
 
         return result;
     };
 
-    return [RBBUSArrayWrapper wrap:flatten(self.array)];
+    return [RBBUSArrayWrapper wrap:_flatten(self.array)];
 }
 
 - (RBBUSArrayWrapper *(^)(NSArray *))without
